@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Music Player</title>
+
+<style>
+body{
+  background:#121212;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  font-family:Arial;
+}
+
+.player{
+  background:#181818;
+  width:260px;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
+  color:white;
+}
+
+.controls{
+  margin-top:10px;
+}
+
+button{
+  padding:10px 15px;
+  margin:5px;
+  background:#1db954;
+  border:none;
+  border-radius:50%;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="player">
+  <h3> Thalapathy</h3>
+
+  <audio id="audio" src="na ready thaan.mp3"></audio>
+
+  <div class="controls">
+    <button onclick="back()">⏮</button>
+    <button onclick="playPause()">▶️</button>
+    <button onclick="forward()">⏭</button>
+  </div>
+</div>
+
+<script>
+const audio = document.getElementById("audio");
+
+function playPause(){
+  if(audio.paused){
+    audio.play();
+  }else{
+    audio.pause();
+  }
+}
+
+function forward(){
+  audio.currentTime += 10;
+}
+
+function back(){
+  audio.currentTime -= 10;
+}
+</script>
+
+</body>
+</html>
